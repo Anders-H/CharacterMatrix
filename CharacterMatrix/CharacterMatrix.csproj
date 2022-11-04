@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>CharacterMatrix</PackageId>
+    <Title>CharacterMatrix</Title>
+    <Product>CharacterMatrix</Product>
+    <Description>The foundation for a terminal emulator (text editor, retro computer emulator, text adventure game, command line interface...).</Description>
+    <PackageProjectUrl>https://github.com/Anders-H/CharacterMatrix</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/Anders-H/CharacterMatrix</RepositoryUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
