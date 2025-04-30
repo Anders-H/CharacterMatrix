@@ -1,6 +1,6 @@
 # CharacterMatrix
 
-Install:
+Install (.NET 8.0):
 
 `Install-Package CharacterMatrix`
 

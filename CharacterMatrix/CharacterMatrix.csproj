@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>CharacterMatrix</PackageId>
@@ -12,10 +12,17 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Anders-H/CharacterMatrix</RepositoryUrl>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+    <Version>1.1</Version>
+    <Company>WinSoft.se</Company>
+    <Copyright>Anders Hesselbom</Copyright>
+    <PackageIcon>matrix.png</PackageIcon>
+    <PackageReleaseNotes>Moved to .NET 8.</PackageReleaseNotes>
+    <AssemblyVersion>1.1</AssemblyVersion>
+    <FileVersion>1.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\README.md">
+    <None Include="..\matrix.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
