@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -16,7 +16,7 @@
     <Company>WinSoft.se</Company>
     <Copyright>Anders Hesselbom</Copyright>
     <PackageIcon>matrix.png</PackageIcon>
-    <PackageReleaseNotes>Moved to .NET 8.</PackageReleaseNotes>
+    <PackageReleaseNotes>Moved to .NET 8 and changed definition of blank when scrolling.</PackageReleaseNotes>
     <AssemblyVersion>1.1</AssemblyVersion>
     <FileVersion>1.1</FileVersion>
   </PropertyGroup>
