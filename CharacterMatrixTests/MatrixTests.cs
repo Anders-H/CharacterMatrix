@@ -50,6 +50,33 @@ public sealed class MatrixTests
         Assert.IsTrue(matrix.GetAt(0, 21) == 'D');
         Assert.IsTrue(matrix.GetAt(0, 22) == 'E');
         Assert.IsTrue(matrix.GetAt(0, 23) == 'F');
-        Assert.IsTrue(matrix.GetAt(0, 24) == 0);
+        Assert.IsTrue(matrix.GetAt(0, 24) == ' ');
+    }
+
+    [TestMethod]
+    public void CanInsertAt()
+    {
+        var matrix = new Matrix(3);
+        matrix.SetAt(0, 0, 'A');
+        matrix.SetAt(1, 0, 'B');
+        matrix.SetAt(2, 0, 'C');
+        matrix.InsertAt(0, 0);
+        Assert.IsTrue(matrix.GetAt(0, 0) == ' ');
+        Assert.IsTrue(matrix.GetAt(1, 0) == 'A');
+        Assert.IsTrue(matrix.GetAt(2, 0) == 'B');
+        matrix.SetAt(0, 0, 'A');
+        matrix.SetAt(1, 0, 'B');
+        matrix.SetAt(2, 0, 'C');
+        matrix.InsertAt(1, 0);
+        Assert.IsTrue(matrix.GetAt(0, 0) == 'A');
+        Assert.IsTrue(matrix.GetAt(1, 0) == ' ');
+        Assert.IsTrue(matrix.GetAt(2, 0) == 'B');
+        matrix.SetAt(0, 0, 'A');
+        matrix.SetAt(1, 0, 'B');
+        matrix.SetAt(2, 0, 'C');
+        matrix.InsertAt(2, 0);
+        Assert.IsTrue(matrix.GetAt(0, 0) == 'A');
+        Assert.IsTrue(matrix.GetAt(1, 0) == 'B');
+        Assert.IsTrue(matrix.GetAt(2, 0) == ' ');
     }
 }

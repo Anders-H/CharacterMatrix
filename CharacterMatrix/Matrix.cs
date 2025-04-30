@@ -33,10 +33,9 @@ public class Matrix
                 _characters[x, y - 1] = _characters[x, y];
 
         var lastRow = RowCount - 1;
-        const char zeroChar = (char)0;
 
         for (var x = 0; x < ColumnCount; x++)
-            _characters[x, lastRow] = zeroChar;
+            _characters[x, lastRow] = ' ';
     }
 
     public void InsertAt(int posX, int posY)
