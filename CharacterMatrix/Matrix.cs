@@ -1,22 +1,33 @@
 ﻿namespace CharacterMatrix;
 
-public class Matrix
+public class Matrix : IMatrix
 {
     private readonly char[,] _characters;
-    public readonly int RowCount = 25;
-    public int ColumnCount;
+    private readonly int _rowCount;
+    private readonly int _columnCount;
 
-    public Matrix(int columnCount)
+    public Matrix(int columnCount) : this(columnCount, 25)
     {
-        ColumnCount = columnCount;
-        _characters = new char[ColumnCount, RowCount];
+    }
+
+    public Matrix(int columnCount, int rowCount)
+    {
+        _columnCount = columnCount;
+        _rowCount = rowCount;
+        _characters = new char[_columnCount, _rowCount];
         Clear();
     }
 
+    public int ColumnCount =>
+        _columnCount;
+
+    public int RowCount =>
+        _rowCount;
+
     public void Clear()
     {
-        for (var y = 0; y < RowCount; y++)
-            for (var x = 0; x < ColumnCount; x++)
+        for (var y = 0; y < _rowCount; y++)
+            for (var x = 0; x < _columnCount; x++)
                 _characters[x, y] = ' ';
     }
 
@@ -28,23 +39,23 @@ public class Matrix
 
     public void ScrollUp()
     {
-        for (var y = 1; y < RowCount; y++)
-            for (var x = 0; x < ColumnCount; x++)
+        for (var y = 1; y < _rowCount; y++)
+            for (var x = 0; x < _columnCount; x++)
                 _characters[x, y - 1] = _characters[x, y];
 
-        var lastRow = RowCount - 1;
+        var lastRow = _rowCount - 1;
 
-        for (var x = 0; x < ColumnCount; x++)
+        for (var x = 0; x < _columnCount; x++)
             _characters[x, lastRow] = ' ';
     }
 
     public void InsertAt(int posX, int posY)
     {
-        for (var y = RowCount - 1; y > posY; y--)
-            for (var x = ColumnCount - 1; x >= 0; x--)
+        for (var y = _rowCount - 1; y > posY; y--)
+            for (var x = _columnCount - 1; x >= 0; x--)
                 _characters[x, y] = GetPreviousCharacter(x, y);
 
-        for (var x = ColumnCount - 1; x > posX; x--)
+        for (var x = _columnCount - 1; x > posX; x--)
             _characters[x, posY] = GetPreviousCharacter(x, posY);
 
         _characters[posX, posY] = ' ';
@@ -52,16 +63,16 @@ public class Matrix
 
     public void DeleteAt(int posX, int posY)
     {
-        for (var x = posX; x < ColumnCount; x++)
+        for (var x = posX; x < _columnCount; x++)
             _characters[x, posY] = GetNextCharacter(x, posY);
 
         posY++;
 
-        if (posY >= RowCount - 1)
+        if (posY >= _rowCount - 1)
             return;
 
-        for (var y = posY; y < RowCount; y++)
-            for (var x = 0; x < ColumnCount; x++)
+        for (var y = posY; y < _rowCount; y++)
+            for (var x = 0; x < _columnCount; x++)
                 _characters[x, y] = GetNextCharacter(x, y);
     }
 
@@ -74,7 +85,7 @@ public class Matrix
 
         if (x < 0 && y > 0)
         {
-            x = ColumnCount - 1;
+            x = _columnCount - 1;
             y--;
         }
         else if (x < 0)
@@ -87,20 +98,20 @@ public class Matrix
 
     private char GetNextCharacter(int x, int y)
     {
-        if (x >= ColumnCount - 1 && y >= RowCount - 1)
+        if (x >= _columnCount - 1 && y >= _rowCount - 1)
             return ' ';
 
         x++;
 
-        if (x >= ColumnCount && y < RowCount - 1)
+        if (x >= _columnCount && y < _rowCount - 1)
         {
             x = 0;
             y++;
         }
-        else if (x >= ColumnCount)
+        else if (x >= _columnCount)
         {
             x = 0;
-            y = RowCount - 1;
+            y = _rowCount - 1;
         }
 
         return _characters[x, y];

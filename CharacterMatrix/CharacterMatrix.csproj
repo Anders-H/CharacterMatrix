@@ -12,17 +12,21 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/Anders-H/CharacterMatrix</RepositoryUrl>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-    <Version>1.1</Version>
+    <Version>1.2</Version>
     <Company>WinSoft.se</Company>
     <Copyright>Anders Hesselbom</Copyright>
     <PackageIcon>matrix.png</PackageIcon>
-    <PackageReleaseNotes>Moved to .NET 8 and changed definition of blank when scrolling.</PackageReleaseNotes>
-    <AssemblyVersion>1.1</AssemblyVersion>
-    <FileVersion>1.1</FileVersion>
+    <PackageReleaseNotes>Variable column count added.</PackageReleaseNotes>
+    <AssemblyVersion>1.2</AssemblyVersion>
+    <FileVersion>1.2</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\matrix.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
